@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 a{
@@ -27,13 +28,14 @@ nav{
     font-family: system-ui, -apple-system, Arial, Helvetica, sans-serif;
     background: #eead2d;
     height: 12vh;
+    width: 100%;
+    position: fixed;
 }
 
 main{
     background: url("banquete_frutos_do_mar_v4.png") no-repeat center center;
     background-size: cover;
     height: 70vh;
-    
 }
 .nav-list{
     list-style: none;
@@ -46,12 +48,14 @@ main{
 }
 
 button{
-
-    background-color: #6c464f;
+    background-color: #202020;
     border-radius: 10px;
-    padding: 7px;
+    padding: 10px;
     transition: 0.3s;
     color: white;
+    transition:  ease-in-out 0.5s;
+    border: none;
+    box-shadow: none;
 }
 
 button:hover{
@@ -59,11 +63,49 @@ button:hover{
 }
 
 footer{
-
   background-color: gray;
   color: #ffffff;
   text-align: center;
   padding: 10px;
+}
+
+.sobre{
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    height: 800px;
+    color:  #333333;
+}
+.sobre-container
+{
+    padding-top: 12PX;
+    width: 340px;
+    height: 270px;
+}
+.sobre-container h2
+{
+    font-size: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.imagens{
+   display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas iguais */
+  gap: 10px;
+   
+}
+.imagens img
+{
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
+    border: solid 1px #eee;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.3);
 }
 
 
