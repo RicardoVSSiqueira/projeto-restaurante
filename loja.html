@@ -1,51 +1,281 @@
-<html lang="pt">
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Petisqueira Chicão</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Petisqueira Chicão</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* HEADER */
+header {
+    background-color: black;
+    padding: 15px 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cart {
+    background: white;
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+}
+
+/* TÍTULO */
+.title {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0;
+}
+
+/* GRID CORRIGIDO */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* CARD */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.titulo {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.preco {
+    color: #8b3a3a; 
+    font-size: 18px;
+    margin: 0;
+}
+
+/* FOOTER */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social {
+  margin-bottom: 20px;
+}
+
+.social a {
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.footer-menu li {
+  margin: 10px 0;
+}
+
+.payments img {
+  height: 28px;
+  margin: 5px;
+  background: #fff;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.credits {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #8b3a3a;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+</style>
+
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a class="logo">Petisqueira Chicão</a>
-            <ul class="nav-list">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="jantar.html">Jantar</a></li>
-                <li><a href="loja.html">Loja</a></li>
-            </ul>
-            <button class="reserva"><a href="reserva.html">Reservar Mesa</a></button>
-        </nav>
-    </header>
 
-      <div
-        style="background-color: #1a1a1a; color: white; padding: 30px 20px; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center;">
+<header>
+    <div class="navbar">
 
-        <div>
-            <h3 style="color: #ffcc00; margin-bottom: 10px;">CONTATO</h3>
-            <p>📞 (47) 93425-2506</p>
-            <p>📍 Rua Iguaçu, 298 - Santo Antonio</p>
+        <div class="logo">PETISQUEIRA CHICÃO</div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">INICIO</a>
+            <a href="loja.html">CARTÃO DE PRESENTE</a>
+            <a href="#">CONTATO</a>
         </div>
 
-        <div>
-            <h3 style="color: #ffcc00; margin-bottom: 10px;">SERVIÇO</h3>
-            <p>🌙 JANTAR</p>
-        </div>
-
-        <div>
-            <h3 style="color: #ffcc00; margin-bottom: 10px;">DELIVERY</h3>
-            <p>🚚 Peça pelo telefone</p>
-            <p>📞 (47) 3425-2506</p>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <div class="cart">🛒</div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
 
     </div>
-    </section>
+</header>
 
-    <footer>PETISQUIRA CHICÃO 2026 &copy; TODOS OS DIREITOS RESERVADOS</footer>
+<div class="title">Destaques</div>
+
+<div class="grid">
+
+    <div class="card">
+        <img src="imgs/Cartaz impresso para depoimentos e citações com fotos femininas.png">
+        <div class="card-info">
+        <p class="titulo">Cartão Presente</p>
+        <p class="preco">R$ 100,00</p>
+    </div>
+    </div>
+
+    <div class="card">
+        <img src="imgs/Cartaz impresso para depoimentos e citações com fotos femininas.png">
+       
+        <div class="card-info">
+        <p class="titulo">Cartão Presente</p>
+        <p class="preco">R$ 200,00</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="imgs/Cartaz impresso para depoimentos e citações com fotos femininas.png">
+
+        <div class="card-info">
+        <p class="titulo">Cartão Presente</p>
+        <p class="preco">R$ 300,00</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="imgs/Cartaz impresso para depoimentos e citações com fotos femininas.png">
+
+        <div class="card-info">
+        <p class="titulo">Cartão Presente</p>
+        <p class="preco">R$ 400,00</p>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+
+    <div class="social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <ul class="footer-menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="loja.html">Produtos</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+
+    <div class="payments">
+      <img src="https://img.icons8.com/color/48/visa.png">
+      <img src="https://img.icons8.com/color/48/mastercard.png">
+      <img src="https://img.icons8.com/color/48/amex.png">
+      <img src="https://img.icons8.com/color/48/boleto-bankario.png">
+      <img src="https://img.icons8.com/color/48/pix.png">
+    </div>
+
+    <div class="credits">
+      <p>Copyright Petisqueira Chicão - 2026</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 
 </body>
-
 </html>
